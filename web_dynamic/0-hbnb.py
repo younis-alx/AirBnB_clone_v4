@@ -42,6 +42,103 @@ def hbnb():
                            cache_id=uuid.uuid4())
 
 
+#-------------------------------------------------------------
+#-------------------------------------------------------------
+# for easy testing and debugging purposes the below code is created
+
+@app.route('/1-hbnb/', strict_slashes=False)
+def hbnb1():
+    """ HBNB is alive! """
+    states = storage.all(State).values()
+    states = sorted(states, key=lambda k: k.name)
+    st_ct = []
+
+    for state in states:
+        st_ct.append([state, sorted(state.cities, key=lambda k: k.name)])
+
+    amenities = storage.all(Amenity).values()
+    amenities = sorted(amenities, key=lambda k: k.name)
+
+    places = storage.all(Place).values()
+    places = sorted(places, key=lambda k: k.name)
+
+    return render_template('1-hbnb.html',
+                           states=st_ct,
+                           amenities=amenities,
+                           places=places,
+                           cache_id=uuid.uuid4())
+
+
+
+@app.route('/2-hbnb/', strict_slashes=False)
+def hbnb2():
+    """ HBNB is alive! """
+    states = storage.all(State).values()
+    states = sorted(states, key=lambda k: k.name)
+    st_ct = []
+
+    for state in states:
+        st_ct.append([state, sorted(state.cities, key=lambda k: k.name)])
+
+    amenities = storage.all(Amenity).values()
+    amenities = sorted(amenities, key=lambda k: k.name)
+
+    places = storage.all(Place).values()
+    places = sorted(places, key=lambda k: k.name)
+
+    return render_template('2-hbnb.html',
+                           states=st_ct,
+                           amenities=amenities,
+                           places=places,
+                           cache_id=uuid.uuid4())
+
+@app.route('/3-hbnb/', strict_slashes=False)
+def hbnb3():
+    """ HBNB is alive! """
+    states = storage.all(State).values()
+    states = sorted(states, key=lambda k: k.name)
+    st_ct = []
+
+    for state in states:
+        st_ct.append([state, sorted(state.cities, key=lambda k: k.name)])
+
+    amenities = storage.all(Amenity).values()
+    amenities = sorted(amenities, key=lambda k: k.name)
+
+    places = storage.all(Place).values()
+    places = sorted(places, key=lambda k: k.name)
+
+    return render_template('3-hbnb.html',
+                           states=st_ct,
+                           amenities=amenities,
+                           places=places,
+                           cache_id=uuid.uuid4())
+
+
+@app.route('/4-hbnb/', strict_slashes=False)
+def hbnb4():
+    """ HBNB is alive! """
+    states = storage.all(State).values()
+    states = sorted(states, key=lambda k: k.name)
+    st_ct = []
+
+    for state in states:
+        st_ct.append([state, sorted(state.cities, key=lambda k: k.name)])
+
+    amenities = storage.all(Amenity).values()
+    amenities = sorted(amenities, key=lambda k: k.name)
+
+    places = storage.all(Place).values()
+    places = sorted(places, key=lambda k: k.name)
+
+    return render_template('4-hbnb.html',
+                           states=st_ct,
+                           amenities=amenities,
+                           places=places,
+                           cache_id=uuid.uuid4())
+
+
+
 if __name__ == "__main__":
     """ Main Function """
     app.run(host='0.0.0.0', port=5000)
