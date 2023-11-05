@@ -1,4 +1,4 @@
-document.ready(function () {
+$(document).ready(function () {
 	const amenities = {};
 	$("li input[type=checkbox]").change(function () {
 		if (this.checked) {
@@ -10,7 +10,7 @@ document.ready(function () {
 	});
 
 	// get status of API
-	$.getJSON("http://0.0.0.0:5001/api/v1/status/", (data) => {
+	$.getJSON("http://localhost:5001/api/v1/status/", (data) => {
 		if (data.status === "OK") {
 			$("div#api_status").addClass("available");
 		} else {
@@ -20,7 +20,7 @@ document.ready(function () {
 
 	// fetch data about places
 	$.post({
-		url: `${HOST}/api/v1/places_search`,
+		url: `http://localhost:5001/api/v1/places_search`,
 		data: JSON.stringify({}),
 		headers: {
 			"Content-Type": "application/json",
